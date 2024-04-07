@@ -43,7 +43,7 @@ def read_from_file_with_pandas(filename):
     str or None: The text from the file or None if the file was not found or an error occurred while reading.
     """
     try:
-        df = pd.read_csv(filename)
+        df = pd.read_csv(filename, header=None)
         return df.to_string(index=False, header=False)
     except FileNotFoundError:
         print("File not found:", filename)
